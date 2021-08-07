@@ -1,0 +1,14 @@
+---
+- hosts: hdb0
+  roles:
+    - { role: imds-reg, scenario: "hana-singlenode", deploy_status: "started"}
+
+- hosts: "hdb0"
+  become: true
+  roles:
+    - disk-setup
+    - hotfix
+
+- hosts: hdb0
+  roles:
+    - { role: imds-reg, scenario: "hana-singlenode", deploy_status: "finished"}
