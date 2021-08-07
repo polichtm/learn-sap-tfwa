@@ -44,7 +44,7 @@ resource null_resource "mount-disks-and-configure-hana" {
      \"install_cockpit\": ${var.install_cockpit}, \
      \"install_webide\": ${var.install_webide}, \
      \"url_cockpit\": \"${var.url_cockpit}\" }" \
-     -i '../../ansible/azure_rm.py' ${var.ansible_playbook_path}
+     -i '../../../ansible/azure_rm.py' ${var.ansible_playbook_path}
      EOT
 
     environment = {
