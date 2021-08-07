@@ -1,6 +1,6 @@
 # Create public IPs
 
-resource "random_string" "pip-name" {
+resource "random_string" "pipname" {
   length  = 12
   upper   = false
   number  = true
