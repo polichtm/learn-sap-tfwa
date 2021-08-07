@@ -7,7 +7,7 @@ resource null_resource "mount-disks-and-configure-hana" {
     ANSIBLE_HOST_KEY_CHECKING="False" \
     ansible-playbook -u ${var.vm_user} \
     --private-key '${var.sshkey_path_private}' \
-    --extra-vars="{ \"url_sapcar\": \"${var.url_sap_sapcar}\", \
+    --extra-vars="{ \
      \"url_hdbserver\": \"${var.url_sap_hdbserver}\", \
      \"sap_sid\": \"${var.sap_sid}\", \
      \"sap_instancenum\": \"${var.sap_instancenum}\", \
@@ -30,16 +30,12 @@ resource null_resource "mount-disks-and-configure-hana" {
      \"url_xsa_hrtt\": \"${var.url_xsa_hrtt}\", \
      \"url_xsa_webide\": \"${var.url_xsa_webide}\", \
      \"url_xsa_mta\": \"${var.url_xsa_mta}\", \
-     \"url_sapcar_windows\": \"${var.url_sapcar_windows}\", \
-     \"url_hana_studio_windows\": \"${var.url_hana_studio_windows}\", \
      \"url_timeout\": \"${var.url_timeout}\", \
      \"url_retries_cnt\": \"${var.url_retries_cnt}\", \
      \"url_retries_delay\": \"${var.url_retries_delay}\",\
      \"package_retries_cnt\": \"${var.package_retries_cnt}\", \
      \"package_retries_delay\": \"${var.package_retries_delay}\", \
      \"pwd_db_xsaadmin\": \"${var.pwd_db_xsaadmin}\", \
-     \"pw_bastion_windows\": \"${var.pw_bastion_windows}\", \
-     \"bastion_username_windows\": \"${var.bastion_username_windows}\", \
      \"pwd_db_tenant\": \"${var.pwd_db_tenant}\", \
      \"pwd_db_shine\": \"${var.pwd_db_shine}\", \
      \"email_shine\": \"${var.email_shine}\", \

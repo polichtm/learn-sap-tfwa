@@ -26,8 +26,6 @@ module "create_hdb" {
 
   az_resource_group         = module.common_setup.resource_group_name
   az_region                 = var.az_region
-  # az_domain_name            = var.az_domain_name
-  az_domain_name            = "vm-${random_string.pip-name}"
   hdb_num                   = 0
   hana_subnet_id            = module.common_setup.vnet_subnets
   nsg_id                    = module.common_setup.nsg_id
@@ -48,7 +46,6 @@ module "configure_vm" {
   sap_instancenum          = var.sap_instancenum
   sap_sid                  = var.sap_sid
   vm_user                  = var.vm_user
-  url_sap_sapcar           = var.url_sap_sapcar_linux
   url_sap_hdbserver        = var.url_sap_hdbserver
   pw_os_sapadm             = var.pw_os_sapadm
   pw_os_sidadm             = var.pw_os_sidadm
@@ -74,8 +71,4 @@ module "configure_vm" {
   install_cockpit          = var.install_cockpit
   install_webide           = var.install_webide
   url_cockpit              = var.url_cockpit
-  url_sapcar_windows       = var.url_sapcar_windows
-  url_hana_studio_windows  = var.url_hana_studio_windows
-  bastion_username_windows = var.bastion_username_windows
-  pw_bastion_windows       = var.pw_bastion_windows
 }
