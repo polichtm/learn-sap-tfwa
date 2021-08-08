@@ -1,2 +1,0 @@
----
-hana_nsg_name: "{{ sap_sid }}-nsg"

@@ -1,5 +1,0 @@
----
-- name: Delete NSG
-  hosts: localhost
-  roles:
-    - { role: create-or-destroy-nsg, nsg_state: "absent" }
