@@ -2,7 +2,6 @@
 resource null_resource "mount-disks-and-configure-hana" {
   provisioner "local-exec" {
     command = <<EOT
-    OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES \
     AZURE_RESOURCE_GROUPS="${var.az_resource_group}" \
     ANSIBLE_HOST_KEY_CHECKING="False" \
     ansible-playbook -u ${var.vm_user} \
